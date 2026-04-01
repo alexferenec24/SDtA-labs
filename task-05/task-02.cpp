@@ -11,7 +11,7 @@ struct CityNode
 
 void addCity(CityNode*& head, string name, int distance)
 {
-    CityNode* temp = new CityNode{ name, distance, NULL };
+    CityNode* temp = new CityNode{ name, distance, nullptr };
 
     if (!head)
     {
@@ -35,7 +35,7 @@ void print(CityNode* head)
 
 void farthest(CityNode* head)
 {
-    CityNode *m1 = NULL, *m2 = NULL;
+    CityNode *m1 = nullptr, *m2 = nullptr;
 
     while (head)
     {
@@ -67,7 +67,7 @@ void clear(CityNode*& head)
 
 int main()
 {
-    CityNode* head = NULL;
+    CityNode* head = nullptr;
     int n;
 
     cout << "Enter number of cities: ";

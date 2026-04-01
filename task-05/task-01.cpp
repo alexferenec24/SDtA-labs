@@ -19,16 +19,16 @@ void addToEndInt(NodeInt*& head, int value)
 {
     NodeInt* temp = new NodeInt;
     temp->data = value;
-    temp->next = NULL;
+    temp->next = nullptr;
 
-    if (head == NULL)
+    if (head == nullptr)
     {
         head = temp;
         return;
     }
 
     NodeInt* p = head;
-    while (p->next != NULL)
+    while (p->next != nullptr)
         p = p->next;
 
     p->next = temp;
@@ -39,13 +39,13 @@ void addAfterPositionInt(NodeInt*& head, int pos, int value)
     NodeInt* p = head;
     int i = 1;
 
-    while (p != NULL && i < pos)
+    while (p != nullptr && i < pos)
     {
         p = p->next;
         i++;
     }
 
-    if (p == NULL) return;
+    if (p == nullptr) return;
 
     NodeInt* temp = new NodeInt;
     temp->data = value;
@@ -55,7 +55,7 @@ void addAfterPositionInt(NodeInt*& head, int pos, int value)
 
 void printList(NodeInt* head)
 {
-    while (head != NULL)
+    while (head != nullptr)
     {
         cout << head->data << " ";
         head = head->next;
@@ -66,7 +66,7 @@ void printList(NodeInt* head)
 double average(NodeInt* head)
 {
     int sum = 0, count = 0;
-    while (head != NULL)
+    while (head != nullptr)
     {
         sum += head->data;
         count++;
@@ -88,7 +88,7 @@ void deleteFirstEven(NodeInt*& head)
     }
 
     NodeInt* p = head;
-    while (p->next != NULL)
+    while (p->next != nullptr)
     {
         if (p->next->data % 2 == 0)
         {
@@ -113,7 +113,7 @@ void clear(NodeInt*& head)
 
 int main()
 {
-    NodeInt* head = NULL;
+    NodeInt* head = nullptr;
     int a, b, c, d;
 
     cout << "Enter 4 integers: ";
