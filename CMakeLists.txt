@@ -17,4 +17,5 @@ add_executable(SDtA_labs task04.cpp
         task-08/task-02.cpp
         task-09/task-01.cpp
         task-09/task-02.cpp
+        task-10/task-01.cpp
 )

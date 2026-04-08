@@ -24,7 +24,7 @@ Node* createNode(int c, string n, double p)
     return node;
 }
 
-Node* insertNode(Node* root, int c, const string& n, double p)
+Node* insertNode(Node* root, int c, string n, double p)
 {
     if (root == nullptr)
         return createNode(c, n, p);
@@ -36,6 +36,31 @@ Node* insertNode(Node* root, int c, const string& n, double p)
 
     return root;
 }
+
+Node* createTree()
+{
+    ifstream fileoutput("C:/Users/Саша/CLionProjects/SDtA labs/task-09/tech.txt");
+
+    if (!fileoutput.is_open())
+    {
+        cout << "Unable to open file";
+        return nullptr;
+    }
+
+    Node* root = nullptr;
+    int code;
+    string name;
+    double price;
+
+    while (fileoutput >> code >> name >> price)
+    {
+        root = insertNode(root, code, name, price);
+    }
+
+    fileoutput.close();
+    return root;
+}
+
 
 Node* searchNode(Node* root, int code)
 {
@@ -115,27 +140,9 @@ int main()
 {
     Node* root = nullptr;
 
-    ifstream fin("tech.txt");
+    root = createTree();
 
-    if (!fin)
-    {
-        cout << "File not found\n";
-        return 0;
-    }
-
-    int code;
-    string name;
-    double price;
-
-    while (fin >> code >> name >> price)
-    {
-        if (searchNode(root, code) == nullptr)
-            root = insertNode(root, code, name, price);
-    }
-
-    fin.close();
-
-    cout << "Tree:\n";
+    cout << "\nTree:\n";
     inorder(root);
 
     double sum = 0;
@@ -143,10 +150,11 @@ int main()
 
     calc(root, sum, count);
 
-    cout << "Average price: " << sum / count << endl;
+    cout << "\nAverage price: " << sum / count << endl;
 
     int d = depth(root);
 
+    cout << "\nNodes on each level:\n";
     for (int i = 1; i <= d; i++)
     {
         cout << "Level " << i << ": "
@@ -154,7 +162,7 @@ int main()
     }
 
     int x;
-    cout << "Enter code: ";
+    cout << "\nEnter code: ";
     cin >> x;
 
     Node* found = searchNode(root, x);
@@ -167,6 +175,7 @@ int main()
     else
         cout << "Not found\n";
 
+    cout << "\nTree after deletion:\n";
     inorder(root);
 
     deleteTree(root);
