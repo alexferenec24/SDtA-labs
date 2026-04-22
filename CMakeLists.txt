@@ -18,4 +18,17 @@ add_executable(SDtA_labs task04.cpp
         task-09/task-01.cpp
         task-09/task-02.cpp
         task-10/task-01.cpp
+        task-11/task-01.cpp
+        task-12/task-01.cpp
+        task-12/task-02.cpp
+        task-12/task-03.cpp
+        task-13/task-01.cpp
+        task-14/task-01.cpp
+        task-14/task-02.cpp
+        task-14/task-03.cpp
+        task-14/task-04.cpp
+        task-03/task-01.cpp
+        task-03/task-02.cpp
+        task-03/task-03.cpp
+        task-04/task-01.cpp
 )
